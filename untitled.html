@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Neha ❤️</title>  <script src="https://cdn.tailwindcss.com"></script>  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffe4e6, #fff1f2);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .romantic-glow {
+      text-shadow: 0 0 15px rgba(255, 105, 180, 0.9);
+    }
+
+    .heart {
+      position: fixed;
+      color: pink;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+
+    .hidden { display: none; }
+
+    .bg-photo {
+      position: fixed;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 15px;
+      opacity: 0.2;
+      z-index: 0;
+    }
+  </style></head><body><!-- RANDOM FLOATING PHOTOS --><img src="photo1.jpg" class="bg-photo" style="top:10%; left:5%;">
+<img src="photo2.jpg" class="bg-photo" style="top:40%; left:80%;">
+<img src="photo3.jpg" class="bg-photo" style="top:70%; left:20%;">
+<img src="photo1.jpg" class="bg-photo" style="top:20%; left:70%;">
+<img src="photo2.jpg" class="bg-photo" style="top:60%; left:10%;">
+<img src="photo3.jpg" class="bg-photo" style="top:80%; left:60%;"><!-- LOCK SCREEN --><div id="lockScreen" class="h-screen flex flex-col items-center justify-center text-center px-6">
+  <h1 class="text-3xl text-pink-500 mb-4">🔒 Private Surprise</h1>
+  <p class="mb-4 text-gray-600">Hint: day I met a beautiful girl in my life 💖</p>
+  <input id="passwordInput" type="password" placeholder="Enter password" class="border p-2 rounded mb-4" />
+  <button onclick="checkPassword()" class="bg-pink-500 text-white px-6 py-2 rounded">Unlock 💌</button>
+  <p id="error" class="text-red-500 mt-2 hidden">Wrong password 😢</p>
+</div><div id="mainSite" class="hidden"><audio id="bg-music" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+</audio><!-- HERO --><header class="h-screen flex items-center justify-center text-white text-center px-4 relative">
+  <img src="photo1.jpg" class="absolute w-full h-full object-cover z-[-1]" />
+  <div class="absolute inset-0 bg-black/50"></div>  <div class="z-10">
+    <h1 class="text-4xl md:text-6xl romantic-glow font-bold">Happy Birthday Neha ❤️</h1>
+    <p class="mt-4 text-lg">Click below for your surprise 💖</p>
+    <button onclick="startSurprise()" class="mt-6 bg-pink-500 px-6 py-3 rounded-full">Open Surprise 🎁</button>
+  </div>
+</header><div id="mainContent" class="hidden"><!-- LOVE LETTER --><section class="max-w-3xl mx-auto my-16 px-6 text-center">
+  <h2 class="text-3xl text-pink-500 mb-6">A Message For You 💌</h2>
+  <div class="bg-white p-6 rounded-xl shadow-lg text-left">
+    <p>Hey Neha ❤️,</p><p class="mt-4">
+  Happy Birthday to the most beautiful girl in my life 💖
+  Your smile is my favorite place in the world… it lights up everything around me.
+</p>
+
+<p class="mt-4">
+  Your eyes… they are something else. Every time I look into them,
+  I feel calm, lost, and happy all at once.
+</p>
+
+<p class="mt-4">
+  Even when you get angry 😤, you look so cute that I can't stop smiling.
+  Every version of you is perfect to me.
+</p>
+
+<p class="mt-4">
+  I’m really lucky to have you. And I promise to always keep that beautiful smile safe ❤️
+</p>
+
+<p class="text-right mt-6">Forever Yours ❤️</p>
+
+  </div>
+</section><!-- PHOTO GALLERY --><section class="my-20 px-4">
+  <h2 class="text-3xl text-center text-pink-500 mb-10">Our Memories 💖</h2>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <img src="photo1.jpg" class="rounded-xl shadow-lg hover:scale-105 transition" />
+    <img src="photo2.jpg" class="rounded-xl shadow-lg hover:scale-105 transition" />
+    <img src="photo3.jpg" class="rounded-xl shadow-lg hover:scale-105 transition" />
+    <img src="photo2.jpg" class="rounded-xl shadow-lg hover:scale-105 transition" />
+    <img src="photo1.jpg" class="rounded-xl shadow-lg hover:scale-105 transition" />
+    <img src="photo3.jpg" class="rounded-xl shadow-lg hover:scale-105 transition" />
+  </div>
+</section><!-- FINAL --><section class="text-center my-20">
+  <h2 class="text-4xl text-pink-600">I Love You Forever ❤️</h2>
+</section></div><footer class="text-center p-6 text-gray-600">Made with ❤️ just for Neha</footer></div><script>
+function checkPassword() {
+  const pass = document.getElementById("passwordInput").value;
+  if(pass === "feb04") {
+    document.getElementById("lockScreen").style.display = "none";
+    document.getElementById("mainSite").classList.remove("hidden");
+  } else {
+    document.getElementById("error").classList.remove("hidden");
+  }
+}
+
+function startSurprise() {
+  document.getElementById("bg-music").play();
+  document.getElementById("mainContent").classList.remove("hidden");
+  window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.innerHTML = "❤️";
+  heart.classList.add("heart");
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 10 + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}
+setInterval(createHeart, 300);
+</script></body>
+</html>
